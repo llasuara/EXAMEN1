@@ -21,8 +21,13 @@ public class Plantilla<T> {
       
       array.add(dato);
    }
-    public T regresar(){
-      return (T)array;
+    public T regresarDato(int posicion){
+      return (T)array.get(posicion);
     }
+    public int tamanio(){
+        return array.size();
+    }
+    
+    
     
 }

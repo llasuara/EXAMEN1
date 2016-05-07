@@ -18,23 +18,23 @@ import Modelo.Refugiado;
 public class FabricaPersonas {
 private Persona instanciaPersona;
 
-public Persona getPersona(String tipo, String identificacion,String paisProcedencia, String paisDestino){
+public Persona getPersona(String tipo,String paisNacimiento, String identificacion,String paisProcedencia, String paisDestino){
     switch(tipo){
         case "Ciudadano":
-            instanciaPersona = new Ciudadano(identificacion,paisProcedencia,paisDestino);
+            instanciaPersona = new Ciudadano(identificacion,paisNacimiento,paisProcedencia,paisDestino,tipo);
         break;
         
         case "Indigena":
-            instanciaPersona = new Indigena(identificacion,paisProcedencia,paisDestino);
+            instanciaPersona = new Indigena(identificacion,paisNacimiento,paisProcedencia,paisDestino,tipo);
         break;
         
         case "Migrante":
-            instanciaPersona = new Migrante(identificacion,paisProcedencia,paisDestino);
+            instanciaPersona = new Migrante(identificacion,paisNacimiento,paisProcedencia,paisDestino,tipo);
             
         break;
         
         case "Refugiado":
-            instanciaPersona = new Refugiado(identificacion,paisProcedencia,paisDestino);
+            instanciaPersona = new Refugiado(identificacion,paisNacimiento,paisProcedencia,paisDestino,tipo);
         break;
       
     }

@@ -13,16 +13,24 @@ public class Refugiado implements Persona {
     private String identificacion;
     private String paisDeProcedencia;
     private String paisDestino;
+    private String paisNacimiento;
+    private String status;
 
-    public Refugiado(String identificacion, String paisDeProcedencia, String paisDestino) {
+    public Refugiado(String identificacion,String  paisNacimiento, String paisDeProcedencia, String paisDestino,String status) {
         this.identificacion = identificacion;
+        this.paisNacimiento=paisNacimiento;
         this.paisDeProcedencia = paisDeProcedencia;
         this.paisDestino = paisDestino;
+        this.status=status;
     }
 
     
 
     public Refugiado() {
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     
 
@@ -33,6 +41,15 @@ public class Refugiado implements Persona {
     public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
+
+    public String getPaisNacimiento() {
+        return paisNacimiento;
+    }
+
+    public void setPaisNacimiento(String paisNacimiento) {
+        this.paisNacimiento = paisNacimiento;
+    }
+    
 
     public String getPaisDeProcedencia() {
         return paisDeProcedencia;
@@ -53,7 +70,28 @@ public class Refugiado implements Persona {
 
     @Override
     public String documentacionParaEntrada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getIdentificacion();
     }
+
+    @Override
+    public void setPais(String pais) {
+        setPaisDeProcedencia(pais);
+    }
+
+    @Override
+    public String getPais() {
+       return getPaisDeProcedencia();
+    }
+
+    @Override
+    public String getStatus() {
+         return status;
+    }
+
+    @Override
+    public String getPaisLlegada() {
+        return paisDestino;
+    }
+
     
 }

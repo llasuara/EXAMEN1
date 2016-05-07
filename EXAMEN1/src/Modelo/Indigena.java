@@ -14,16 +14,24 @@ public class Indigena implements Persona {
     private String identificacion;
     private String paisDeProcedencia;
     private String paisDestino;
+    private String paisNacimiento;
+    private String status;
 
-    public Indigena(String identificacion, String paisDeProcedencia, String paisDestino) {
+    public Indigena(String identificacion,String paisNacimiento, String paisDeProcedencia, String paisDestino,String status) {
         this.identificacion = identificacion;
+        this.paisNacimiento=paisNacimiento;
         this.paisDeProcedencia = paisDeProcedencia;
         this.paisDestino = paisDestino;
+        this.status=status;
     }
 
     
 
     public Indigena() {
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     
 
@@ -35,6 +43,15 @@ public class Indigena implements Persona {
         this.identificacion = identificacion;
     }
 
+    public String getPaisNacimiento() {
+        return paisNacimiento;
+    }
+
+    public void setPaisNacimiento(String paisNacimiento) {
+        this.paisNacimiento = paisNacimiento;
+    }
+    
+    
     public String getPaisDeProcedencia() {
         return paisDeProcedencia;
     }
@@ -54,7 +71,29 @@ public class Indigena implements Persona {
 
     @Override
     public String documentacionParaEntrada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getIdentificacion();
     }
+
+    @Override
+    public void setPais(String pais) {
+         setPaisDestino(pais);
+    }
+
+    @Override
+    public String getPais() {
+        return getPaisDestino();
+    }
+
+    @Override
+    public String getStatus() {
+        return status;
+    }
+
+    @Override
+    public String getPaisLlegada() {
+       return paisDestino;
+    }
+
+    
     
 }

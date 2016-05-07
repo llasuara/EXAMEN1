@@ -12,5 +12,9 @@ package Modelo;
 public interface Persona  {
     
 String documentacionParaEntrada();
-    
+void setPais(String pais);
+String getPais();
+String getStatus();
+String getPaisLlegada();
+//pais destino
 }

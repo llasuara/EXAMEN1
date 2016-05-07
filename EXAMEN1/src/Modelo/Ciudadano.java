@@ -11,18 +11,30 @@ package Modelo;
  */
 public class Ciudadano implements Persona {
     private String identificacion;
-    private String paisProcedencia;
+    private String paisActual;
     private String paisDestino;
+    private String paisNacimiento;
+    private String status;
 
-    public Ciudadano(String identificacion, String paisProcedencia, String paisDestino) {
+    public Ciudadano(String identificacion, String paisNacimiento ,String paisProcedencia, String paisDestino,String status) {
         this.identificacion = identificacion;
-        this.paisProcedencia = paisProcedencia;
+        this.paisActual = paisProcedencia;
         this.paisDestino = paisDestino;
+        this.paisNacimiento=paisNacimiento;
+        this.status=status;
     }
 
     
 
     public Ciudadano() {
+    }
+
+    public void setPaisActual(String paisActual) {
+        this.paisActual = paisActual;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     
 
@@ -34,12 +46,21 @@ public class Ciudadano implements Persona {
         this.identificacion = identificacion;
     }
 
+    public String getPaisNacimiento() {
+        return paisNacimiento;
+    }
+
+    public void setPaisNacimiento(String paisNacimiento) {
+        this.paisNacimiento = paisNacimiento;
+    }
+    
+
     public String getPaisProcedencia() {
-        return paisProcedencia;
+        return paisActual;
     }
 
     public void setPaisProcedencia(String paisProcedencia) {
-        this.paisProcedencia = paisProcedencia;
+        this.paisActual = paisProcedencia;
     }
 
     public String getPaisDestino() {
@@ -53,8 +74,30 @@ public class Ciudadano implements Persona {
 
     @Override
     public String documentacionParaEntrada() {
-     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. 
+        return getIdentificacion();
     }
+
+    @Override
+    public void setPais(String pais) {
+        setPaisProcedencia(pais);
+    }
+
+    @Override
+    public String getPais() {
+       return getPaisDestino();
+    }
+
+    @Override
+    public String getStatus() {
+         return status;
+    }
+
+    @Override
+    public String getPaisLlegada() {
+       return paisDestino;
+    }
+
+
     
     
 }

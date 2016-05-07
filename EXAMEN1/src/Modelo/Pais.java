@@ -12,13 +12,21 @@ package Modelo;
 public class Pais {
     
     private int cantidadPersonas;
-
-    public Pais( int cantidadPersonas) {
-        
+    private String nombre;
+    public Pais( String nombre, int cantidadPersonas) {
+        this.nombre=nombre;
         this.cantidadPersonas = cantidadPersonas;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
     public int getCantidadPersonas() {
         return cantidadPersonas;
     }
@@ -26,6 +34,10 @@ public class Pais {
     public void setCantidadPersonas(int cantidadPersonas) {
         this.cantidadPersonas = cantidadPersonas;
     }
+    public void quitarPersona(int resta){
+        cantidadPersonas=cantidadPersonas-resta;
+    }
+        
     
     
     
